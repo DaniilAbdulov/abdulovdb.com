@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
+import { ImCheckmark2 } from "react-icons/im";
 
 export const AboutCard = () => {
     return (
@@ -23,13 +23,16 @@ export const AboutCard = () => {
                     </p>
                     <ul>
                         <li className="about-activity">
-                            <ImPointRight /> Do sport
+                            <ImCheckmark2 /> Do sport
                         </li>
                         <li className="about-activity">
-                            <ImPointRight /> Read books
+                            <ImCheckmark2 /> Read books
                         </li>
                         <li className="about-activity">
-                            <ImPointRight /> Self-development
+                            <ImCheckmark2 /> Healthy-food
+                        </li>                        
+                        <li className="about-activity">
+                            <ImCheckmark2 /> Self-development
                         </li>
                     </ul>
 
