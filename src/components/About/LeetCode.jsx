@@ -14,7 +14,6 @@ export const LeetCode = () => {
             );
             const data = await response.json();
             setTasksData(data);
-            setObjLength(Object.keys(data).length);
             setLoading(false);
         } catch (error) {
             console.log(error);
@@ -23,50 +22,63 @@ export const LeetCode = () => {
     };
 
     useEffect(() => {
-        if (!objLength) {
-            getData();
-        }
-    }, [objLength]);
+        getData();
+    }, []);
+    const renderProgressBar = (value, solved, total) => {
+        const percentage = Math.round((solved / total) * 100);
+        const variant =
+            value === "easy"
+                ? "success"
+                : value === "medium"
+                ? "warning"
+                : "danger";
+        const backgorundColor =
+            value === "easy"
+                ? "#80cbc4"
+                : value === "medium"
+                ? "#ffe082"
+                : "#ffab91";
+        return (
+            <>
+                <h6>
+                    {solved}/{total}
+                </h6>
+                <ProgressBar
+                    style={{
+                        marginBottom: "10px",
+                        backgroundColor: backgorundColor,
+                    }}
+                    variant={variant}
+                    now={percentage}
+                />
+            </>
+        );
+    };
     return (
         <>
             {loading && <Spinner />}
-            {!objLength && !loading && <div>No data</div>}
-            {objLength && !loading && (
+            {tasksData && (
                 <div>
                     <h1>LeetCode</h1>
-
                     <h5>Total solved: {tasksData.totalSolved}</h5>
-                    <h6>
-                        Easy {tasksData.easySolved}/{tasksData.totalEasy}
-                    </h6>
-                    <ProgressBar
-                        style={{ backgroundColor: "#80cbc4" }}
-                        variant="success"
-                        now={Math.round(
-                            (tasksData.easySolved / tasksData.totalEasy) * 100
+                    {tasksData.totalEasy &&
+                        renderProgressBar(
+                            "easy",
+                            tasksData.easySolved,
+                            tasksData.totalEasy
                         )}
-                    />
-                    <h6>
-                        Medium {tasksData.mediumSolved}/{tasksData.totalMedium}
-                    </h6>
-                    <ProgressBar
-                        style={{ backgroundColor: "#ffe082" }}
-                        variant="warning"
-                        now={Math.round(
-                            (tasksData.mediumSolved / tasksData.totalMedium) *
-                                100
+                    {tasksData.totalMedium &&
+                        renderProgressBar(
+                            "medium",
+                            tasksData.mediumSolved,
+                            tasksData.totalMedium
                         )}
-                    />
-                    <h6>
-                        Hard {tasksData.hardSolved}/{tasksData.totalHard}
-                    </h6>
-                    <ProgressBar
-                        style={{ backgroundColor: "#ffab91" }}
-                        variant="danger"
-                        now={Math.round(
-                            (tasksData.hardSolved / tasksData.totalHard) * 100
+                    {tasksData.totalHard &&
+                        renderProgressBar(
+                            "hard",
+                            tasksData.hardSolved,
+                            tasksData.totalHard
                         )}
-                    />
                 </div>
             )}
 
