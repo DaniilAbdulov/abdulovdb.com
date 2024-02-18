@@ -10,7 +10,7 @@ export const Footer = () => {
         <Container fluid className="footer">
             <Row>
                 <Col md="4" className="footer-copywright">
-                    <h3>Designed and Developed by Daniil Abdulov</h3>
+                    <h3>Developed by Daniil Abdulov</h3>
                 </Col>
                 <Col md="4" className="footer-copywright">
                     <h3>Copyright © {year} ADB</h3>
