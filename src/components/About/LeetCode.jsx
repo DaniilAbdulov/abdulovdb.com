@@ -50,6 +50,7 @@ export const LeetCode = () => {
                     }}
                     variant={variant}
                     now={percentage}
+                    label={value}
                 />
             </>
         );
