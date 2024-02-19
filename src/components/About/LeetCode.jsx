@@ -27,15 +27,15 @@ export const LeetCode = () => {
     const renderProgressBar = (value, solved, total) => {
         const percentage = Math.round((solved / total) * 100);
         const variant =
-            value === "easy"
+            value === "Easy"
                 ? "success"
-                : value === "medium"
+                : value === "Medium"
                 ? "warning"
                 : "danger";
         const backgorundColor =
-            value === "easy"
+            value === "Easy"
                 ? "#80cbc4"
-                : value === "medium"
+                : value === "Medium"
                 ? "#ffe082"
                 : "#ffab91";
         return (
@@ -43,6 +43,7 @@ export const LeetCode = () => {
                 <h6>
                     {solved}/{total}
                 </h6>
+                <h6>{value}</h6>
                 <ProgressBar
                     style={{
                         marginBottom: "10px",
@@ -50,7 +51,7 @@ export const LeetCode = () => {
                     }}
                     variant={variant}
                     now={percentage}
-                    label={value}
+                    
                 />
             </>
         );
@@ -64,19 +65,19 @@ export const LeetCode = () => {
                     <h5>Total solved: {tasksData.totalSolved}</h5>
                     {tasksData.totalEasy &&
                         renderProgressBar(
-                            "easy",
+                            "Easy",
                             tasksData.easySolved,
                             tasksData.totalEasy
                         )}
                     {tasksData.totalMedium &&
                         renderProgressBar(
-                            "medium",
+                            "Medium",
                             tasksData.mediumSolved,
                             tasksData.totalMedium
                         )}
                     {tasksData.totalHard &&
                         renderProgressBar(
-                            "hard",
+                            "Hard",
                             tasksData.hardSolved,
                             tasksData.totalHard
                         )}
