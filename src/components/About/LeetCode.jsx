@@ -41,9 +41,8 @@ export const LeetCode = () => {
         return (
             <>
                 <h6>
-                    {solved}/{total}
+                    {value}{" "}{solved}/{total}
                 </h6>
-                <h6>{value}</h6>
                 <ProgressBar
                     style={{
                         marginBottom: "10px",
