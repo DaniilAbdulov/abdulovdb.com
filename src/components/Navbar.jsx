@@ -89,7 +89,7 @@ export const NavBar = () => {
                             </Nav.Link>
                         </Nav.Item>
 
-                        <Nav.Item>
+{/*                         <Nav.Item>
                             <Nav.Link
                                 as={Link}
                                 to="/resume"
@@ -100,7 +100,7 @@ export const NavBar = () => {
                                 />{" "}
                                 Resume
                             </Nav.Link>
-                        </Nav.Item>
+                        </Nav.Item> */}
 
                         <Nav.Item className="fork-btn">
                             <Button
