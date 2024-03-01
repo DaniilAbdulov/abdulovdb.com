@@ -13,7 +13,7 @@ import {
     AiOutlineUser,
 } from "react-icons/ai";
 
-import { CgFileDocument } from "react-icons/cg";
+//import { CgFileDocument } from "react-icons/cg";
 
 export const NavBar = () => {
     const [expand, updateExpanded] = useState(false);
@@ -89,7 +89,7 @@ export const NavBar = () => {
                             </Nav.Link>
                         </Nav.Item>
 
-{/*                         <Nav.Item>
+                        {/*                         <Nav.Item>
                             <Nav.Link
                                 as={Link}
                                 to="/resume"

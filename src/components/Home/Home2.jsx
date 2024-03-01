@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.jpg";
 import Tilt from "react-parallax-tilt";
 import { socialLinks } from "../../data/socialLinks.js";
 
 export const Home2 = () => {
+    const [isDesktop, setIsDesktop] = useState(true);
+    useEffect(() => {
+        const width = document.documentElement.clientWidth;
+        if (width < 768) {
+            setIsDesktop(false);
+        }
+    }, []);
     return (
         <Container fluid className="home-about-section" id="about">
             <Container>
@@ -43,7 +50,7 @@ export const Home2 = () => {
                         </p>
                     </Col>
                     <Col md={4} className="myAvtar">
-                        <Tilt>
+                        <Tilt tiltEnable={isDesktop}>
                             <img
                                 src={myImg}
                                 className="img-fluid"

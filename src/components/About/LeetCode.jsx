@@ -4,7 +4,6 @@ import { ProgressBar, Spinner } from "react-bootstrap";
 
 export const LeetCode = () => {
     const [tasksData, setTasksData] = useState([]);
-    const [objLength, setObjLength] = useState(0);
     const [loading, setLoading] = useState(false);
     const getData = async () => {
         try {
@@ -41,7 +40,7 @@ export const LeetCode = () => {
         return (
             <>
                 <h6>
-                    {value}{" "}{solved}/{total}
+                    {value} {solved}/{total}
                 </h6>
                 <ProgressBar
                     style={{
@@ -50,7 +49,6 @@ export const LeetCode = () => {
                     }}
                     variant={variant}
                     now={percentage}
-                    
                 />
             </>
         );
