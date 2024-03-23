@@ -36,7 +36,7 @@ export const AboutCard = () => {
                         </li>
                     </ul>
 
-                    <p style={{ color: "rgb(155 126 172)" }}>
+                    <p style={{ color: "#b5968c" }}>
                         "And if you don't know, now you know..."{" "}
                     </p>
                     <footer className="blockquote-footer">

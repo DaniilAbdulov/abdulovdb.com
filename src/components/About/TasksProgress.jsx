@@ -1,6 +1,6 @@
 import React from "react";
-import { LeetCode } from "./LeetCode";
 import { Col, Row } from "react-bootstrap";
+import { LeetCode } from "./LeetCode";
 import { CodeWars } from "./CodeWars";
 
 export const TasksProgress = () => {

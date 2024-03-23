@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import homeLogo from "../../Assets/home-main.svg";
+import homeLogo from "../../Assets/home-main.png";
 import { ProgressBar, Spinner } from "react-bootstrap";
 
 export const LeetCode = () => {
