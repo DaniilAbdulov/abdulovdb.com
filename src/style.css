@@ -455,8 +455,8 @@ button:focus {
 
 .project-card-view {
     box-shadow: 0 4px 5px 3px #D48166 !important;
-    color: #373A36 !important;
-    background-color: #D48166 !important;
+    color: #E6E2DD !important;
+    background-color: #373A36 !important;
     opacity: 0.9 !important;
     transition: all 0.5s ease 0s !important;
     height: 100% !important;
