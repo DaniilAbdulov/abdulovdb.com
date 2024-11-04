@@ -18,8 +18,6 @@ export const ProjectCard = (props) => {
                     >
                         <BsGithub /> &nbsp; GitHub
                     </Button>
-                    {/* {"\n"}
-                {"\n"} */}
 
                     {props.homePage && (
                         <Button
